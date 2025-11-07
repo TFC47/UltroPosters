@@ -1,107 +1,769 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ultro Posters</title>
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light">
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <div class="navbar-content">
-    <img src="LOGO.png" alt="Logo" class="logo">
-      <a class="navbar-brand fw-bold" href="#">Ultro Posters</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+        <img src="LOGO.png" alt="Logo" class="logo">
+          <a class="navbar-brand fw-bold" href="#">Ultro Posters</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        
+          </ul>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="text-center text-light d-flex align-items-center justify-content-center hero-section">
-    <div>
-      <h1 class="fw-bold display-4">Turn Your Walls Into Art</h1>
-      <p class="lead">Handcrafted creativity by Team UltroPosters.</p>
-      <a href="#shop" class="btn btn-warning btn-lg mt-3">Explore Posters</a>
+  <!-- Hero -->
+  <header id="home" class="hero d-flex align-items-center">
+    <div class="container text-center text-light">
+      <h1 class="display-4 fw-bold hero-animated">Turn Your Walls Into Art</h1>
+      <p class="lead">Handcrafted HD posters by Team UltroPosters — ready in exact dimensions.</p>
+      <div class="mt-3">
+        <a href="#shop" class="btn btn-warning btn-lg">Explore Posters</a>
+      </div>
+      <div class="mt-4 hero-rotator">
+        <span class="rot-item">Designed for Dreamers</span>
+        <span class="rot-item">F1 • Football • Anime</span>
+        <span class="rot-item">Made with Heart — Printed with Care</span>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Shop Section -->
-  <section id="shop" class="py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4">Shop Posters</h2>
-      <div class="row g-4">
-
-        <!-- Poster Card Example -->
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card shadow-sm h-100">
-            <img src="poster1.jpg" class="card-img-top" alt="Poster 1">
-            <div class="card-body">
-              <h5 class="card-title">BMW LOVE</h5>
-              <span class="badge bg-success">A Grade</span>
-              <p class="mt-2">₹40</p>
-              <a href="https://wa.me/919363507768?text=I%20want%20to%20buy%20Poster%201%20(A%20Grade)" class="btn btn-dark w-100">Order via WhatsApp</a>
-            </div>
-          </div>
+  <!-- Filters / Sort -->
+  <section class="py-4 bg-light" id="controls">
+    <div class="container">
+      <div class="row g-2 align-items-center">
+        <div class="col-sm-6 col-md-4">
+          <label class="form-label mb-1">Filter by Theme</label>
+          <select id="filterTheme" class="form-select">
+            <option value="all">All Themes</option>
+            <option value="cars">Cars</option>
+            <option value="football">Football</option>
+            <option value="anime">Anime</option>
+            <option value="cricket">Cricket</option>
+            <option value="actors">Actors</option>
+            <option value="quotes">Quotes</option>
+            <option value="comics">Comics</option>
+            <option value="f1">F1</option>
+          </select>
         </div>
 
-        <!-- Copy and edit this block for each poster -->
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card shadow-sm h-100">
-            <img src="poster2.jpg" class="card-img-top" alt="Poster 2">
-            <div class="card-body">
-              <h5 class="card-title">WOAH CR7</h5>
-              <span class="badge bg-warning text-dark">B Grade</span>
-              <p class="mt-2">₹30</p>
-              <a href="https://wa.me/919363507768text=I%20want%20to%20buy%20Poster%202%20(B%20Grade)" class="btn btn-dark w-100">Order via WhatsApp</a>
-            </div>
-          </div>
+        <div class="col-sm-6 col-md-4">
+          <label class="form-label mb-1">Filter by Dimension</label>
+          <select id="filterDim" class="form-select">
+            <option value="all">All sizes</option>
+            <option value="21.5x29.7">21.5 × 29.7 cm</option>
+          </select>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card shadow-sm h-100">
-            <img src="poster3.jpg" class="card-img-top" alt="Poster 3">
-            <div class="card-body">
-              <h5 class="card-title">PEAKY BLINDERS</h5>
-              <span class="badge bg-danger">C Grade</span>
-              <p class="mt-2">₹25</p>
-              <a href="https://wa.me/919363507768text=I%20want%20to%20buy%20Poster%203%20(C%20Grade)" class="btn btn-dark w-100">Order via WhatsApp</a>
-            </div>
-          </div>
+        <div class="col-sm-6 col-md-4">
+          <label class="form-label mb-1">Sort</label>
+          <select id="sortBy" class="form-select">
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="name">Name A → Z</option>
+          </select>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-dark text-light py-5">
+  <!-- Shop -->
+  <section id="shop" class="py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-4 text-center">Shop Posters</h2>
+
+      <div id="posterGrid" class="row g-4">
+
+        <!-- Poster cards (10 cards). Replace posterX.jpg files accordingly -->
+        <!-- Data attributes: data-theme, data-dim, data-price, data-name -->
+        <!-- Poster 1 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="cars" data-dim="21.5x29.7" data-price="40" data-name="BMW">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster1.jpg" class="card-img-top" alt="BMW">
+              <div class="theme-tag">🚘 Cars</div>
+              <button class="fav-btn" data-id="1" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">BMW</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="1">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 2 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="football" data-dim="21.5x29.7" data-price="40" data-name="Ronaldo 1">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster2.jpg" class="card-img-top" alt="Ronaldo 1">
+              <div class="theme-tag">⚽ Football</div>
+              <button class="fav-btn" data-id="2" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Ronaldo 1</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="2">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 3 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="cars" data-dim="21.5x29.7" data-price="40" data-name="Porsche">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster3.jpg" class="card-img-top" alt="Porsche">
+              <div class="theme-tag">🚘 Cars</div>
+              <button class="fav-btn" data-id="3" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Porsche</h5>
+              <p class="small mb-1">Size: <strong>21.5 x 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="3">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 4 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="football" data-dim="21.5x29.7" data-price="50" data-name="Ronaldo 2">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster4.jpg" class="card-img-top" alt="Ronaldo 2">
+              <div class="theme-tag">⚽ Football</div>
+              <button class="fav-btn" data-id="4" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Ronaldo 2</h5>
+              <p class="small mb-1">Size: <strong>21.5 x 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹50</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="4">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 5 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="anime" data-dim="21.5x29.7" data-price="50" data-name="Zenistu">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster5.jpg" class="card-img-top" alt="Zenistu">
+              <div class="theme-tag">⚡ Anime</div>
+              <button class="fav-btn" data-id="5" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Zenistu</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹50</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="5">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 6 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="anime" data-dim="21.5x29.7" data-price="40" data-name="Naruto">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster6.jpg" class="card-img-top" alt="Naruto">
+              <div class="theme-tag">⚡ Anime</div>
+              <button class="fav-btn" data-id="6" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Naruto</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="6">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 7 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="cricket" data-dim="21.5x29.7" data-price="40" data-name="MS Dhoni">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster7.jpg" class="card-img-top" alt="MS Dhoni">
+              <div class="theme-tag">🏏 Cricket</div>
+              <button class="fav-btn" data-id="7" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">MS Dhoni</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="7">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 8 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="actors" data-dim="21.5x29.7" data-price="40" data-name="Tamil Cinema">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster8.jpg" class="card-img-top" alt="Tamil Cinema">
+              <div class="theme-tag">🎬 Actors</div>
+              <button class="fav-btn" data-id="8" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Tamil Cinema</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="8">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 9 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="football" data-dim="21.5x29.7" data-price="40" data-name="Messi">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster9.jpg" class="card-img-top" alt="Messi">
+              <div class="theme-tag">⚽ Football</div>
+              <button class="fav-btn" data-id="9" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Messi</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="9">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 10 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="quotes" data-dim="21.5x29.7" data-price="40" data-name="Quote 1">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster10.jpg" class="card-img-top" alt="Quote 1">
+              <div class="theme-tag">🗿 Quotes</div>
+              <button class="fav-btn" data-id="10" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Quote 1</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="10">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 11 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="anime" data-dim="21.5x29.7" data-price="40" data-name="Pokemon 1">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster11.jpg" class="card-img-top" alt="Pokemon">
+              <div class="theme-tag">⚡ Anime</div>
+              <button class="fav-btn" data-id="10" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Pokemon</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="10">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 12 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="actors" data-dim="21.5x29.7" data-price="40" data-name="Arya">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster12.jpg" class="card-img-top" alt="Arya">
+              <div class="theme-tag">🎬 Actors</div>
+              <button class="fav-btn" data-id="8" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Arya</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="8">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 13 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="quotes" data-dim="21.5x29.7" data-price="40" data-name="Spartan">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster13.jpg" class="card-img-top" alt="Spartan">
+              <div class="theme-tag">🗿 Quotes</div>
+              <button class="fav-btn" data-id="10" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Spartan</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="10">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 14 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="comics" data-dim="21.5x29.7" data-price="40" data-name="Batman">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster14.jpg" class="card-img-top" alt="Batman">
+              <div class="theme-tag">🕷️ Comics</div>
+              <button class="fav-btn" data-id="10" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Batman</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="10">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 15 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="football" data-dim="21.5x29.7" data-price="40" data-name="Ronaldo 3">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster15.jpg" class="card-img-top" alt="Ronaldo 3">
+              <div class="theme-tag">⚽ Football</div>
+              <button class="fav-btn" data-id="2" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Ronaldo 3</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="2">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 16 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="anime" data-dim="21.5x29.7" data-price="50" data-name="Ash Geninja">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster16.jpg" class="card-img-top" alt="Ash Geninja">
+              <div class="theme-tag">⚡ Anime</div>
+              <button class="fav-btn" data-id="10" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Ash Geninja</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹50</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="10">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 17 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="f1" data-dim="21.5x29.7" data-price="50" data-name="Lewis Hamilton 1">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster17.jpg" class="card-img-top" alt="Lewis Hamilton">
+              <div class="theme-tag">🏎 F1</div>
+              <button class="fav-btn" data-id="10" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Lewis Hamilton</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹50</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="10">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 18 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="f1" data-dim="21.5x29.7" data-price="40" data-name="Max Verstappen">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster18.jpg" class="card-img-top" alt="Max Verstappen">
+              <div class="theme-tag">🏎 F1</div>
+              <button class="fav-btn" data-id="10" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Max Verstappen</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="10">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 19 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="f1" data-dim="21.5x29.7" data-price="40" data-name="Lewis Hamilton 2">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster19.jpg" class="card-img-top" alt="Lewis Hamilton">
+              <div class="theme-tag">🏎 F1</div>
+              <button class="fav-btn" data-id="10" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Lewis Hamilton 2</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹40</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="10">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poster 20 -->
+        <div class="col-6 col-md-4 col-lg-3 poster-card" data-theme="anime" data-dim="21.5x29.7" data-price="50" data-name="Eren Yeager">
+          <div class="card h-100 shadow-sm">
+            <div class="img-wrap">
+              <img src="poster20.jpg" class="card-img-top" alt="Eren Jeager">
+              <div class="theme-tag">⚡ Anime</div>
+              <button class="fav-btn" data-id="10" title="Add to favorites"><i class="bi bi-heart"></i></button>
+            </div>
+
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Eren Yeager</h5>
+              <p class="small mb-1">Size: <strong>21.5 × 29.7 cm</strong></p>
+              <p class="mb-2 price h5 text-success">₹50</p>
+              <div class="mt-auto">
+                <button class="btn btn-outline-dark w-100 preview-btn" data-id="10">Preview & Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /posterGrid -->
+    </div>
+  </section>
+  
+  <!-- Customer-friendly info -->
+  <section class="py-4 bg-light">
     <div class="container text-center">
-      <h2 class="fw-bold mb-3">About & Contact</h2>
-      <p class="lead">Ultro Posters began as a creative venture by Team UltroPosters — turning imagination into art you can touch.</p>
-      <p class="mb-1">📱 <a href="https://wa.me/919363507768" class="text-warning text-decoration-none">Chat on WhatsApp</a></p>
-      <p>📸 Instagram: <a href="https://instagram.com/" class="text-warning text-decoration-none">@ultroposters</a></p>
+      <div class="row g-3">
+        <div class="col-sm-6 col-md-3">
+          <i class="bi bi-credit-card-2-front fs-1"></i>
+          <h6 class="mt-2">Secure Payments</h6>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <i class="bi bi-truck fs-1"></i>
+          <h6 class="mt-2">Fast Local Delivery</h6>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <i class="bi bi-chat-dots fs-1"></i>
+          <h6 class="mt-2">Support via Instagram</h6>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <i class="bi bi-award fs-1"></i>
+          <h6 class="mt-2">Satisfaction Guarantee</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-dark text-light">
+    <div class="container text-center">
+      <h3 class="fw-bold">Contact / Order</h3>
+      <p class="mb-2">DM us on Instagram to order — <a id="igProfile" href="https://www.instagram.com/ultroposters?igsh=MXZibHFtZDF3c3B1Nw==" target="_blank" class="text-warning text-decoration-none">@ultroposters</a></p>
+      <p>If you want to change your life, change your environment. ~ a wise man</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-center text-light py-3">
-    <p class="mb-0">© 2025 Ultro Posters. Designed by Team UltroPosters.</p>
+  <footer class="py-3 text-center bg-black text-light">
+    <div class="container">
+      © 2025 Ultro Posters. Designed by Bharani B.
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  <!-- Floating Instagram icon -->
+  <a id="floatingIG" href="https://www.instagram.com/ultroposters?igsh=MXZibHFtZDF3c3B1Nw==" target="_blank" class="floating-ig" title="Chat on Instagram">
+    <i class="bi bi-instagram"></i>
+  </a>
 
+  <!-- Preview & Order Modal -->
+  <div class="modal fade" id="previewModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="row g-0">
+            <div class="col-md-7">
+              <img id="modalImage" src="" alt="Preview" class="img-fluid w-100 h-100 object-fit-cover">
+            </div>
+            <div class="col-md-5 p-4">
+              <h4 id="modalName"></h4>
+              <p id="modalTheme" class="mb-1"></p>
+              <p id="modalDim" class="mb-1"><strong>Size:</strong></p>
+              <p id="modalPrice" class="h4 text-success"></p>
+
+              <div class="mt-3">
+                <button id="copyOrder" class="btn btn-outline-dark me-2"><i class="bi bi-clipboard"></i> Copy DM message</button>
+                <a id="openIG" class="btn btn-dark" target="_blank"><i class="bi bi-instagram"></i> Open Instagram</a>
+              </div>
+
+              <hr>
+
+              <p class="small text-muted">You can also save this poster to favorites ❤ and view all favorites later.</p>
+
+              <div class="mt-3">
+                <button id="modalFavBtn" class="btn btn-outline-danger"><i class="bi bi-heart"></i> Add to favorites</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Inline script -->
+  <script>
+    // Config: set your instagram handle here (no @)
+    const INSTAGRAM_HANDLE = 'ultroposters'; // <- replace with your handle
+
+    // Theme rotator animation class handled in CSS
+
+    // FILTER & SORT
+    const filterTheme = document.getElementById('filterTheme');
+    const filterDim = document.getElementById('filterDim');
+    const sortBy = document.getElementById('sortBy');
+    const posterGrid = document.getElementById('posterGrid');
+
+    function applyFiltersAndSort() {
+      const theme = filterTheme.value;
+      const dim = filterDim.value;
+      const sort = sortBy.value;
+
+      const cards = Array.from(posterGrid.querySelectorAll('.poster-card'));
+
+      // Filter
+      cards.forEach(card => {
+        const cardTheme = card.dataset.theme;
+        const cardDim = card.dataset.dim;
+
+        let visible = true;
+        if (theme !== 'all' && cardTheme !== theme) visible = false;
+        if (dim !== 'all' && cardDim !== dim) visible = false;
+
+        card.style.display = visible ? '' : 'none';
+      });
+
+      // Sort (by moving DOM nodes)
+      const visibleCards = cards.filter(c => c.style.display !== 'none');
+      if (sort === 'price-asc' || sort === 'price-desc' || sort === 'name') {
+        visibleCards.sort((a,b) => {
+          if (sort === 'name') return a.dataset.name.localeCompare(b.dataset.name);
+          const pa = Number(a.dataset.price);
+          const pb = Number(b.dataset.price);
+          return sort === 'price-asc' ? pa - pb : pb - pa;
+        });
+
+        // append in order
+        visibleCards.forEach(c => posterGrid.appendChild(c));
+      }
+    }
+
+    filterTheme.addEventListener('change', applyFiltersAndSort);
+    filterDim.addEventListener('change', applyFiltersAndSort);
+    sortBy.addEventListener('change', applyFiltersAndSort);
+
+    // PREVIEW & ORDER Modal
+    const previewBtns = document.querySelectorAll('.preview-btn');
+    const previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
+    const modalImage = document.getElementById('modalImage');
+    const modalName = document.getElementById('modalName');
+    const modalTheme = document.getElementById('modalTheme');
+    const modalDim = document.getElementById('modalDim');
+    const modalPrice = document.getElementById('modalPrice');
+    const openIG = document.getElementById('openIG');
+    const copyOrder = document.getElementById('copyOrder');
+    const modalFavBtn = document.getElementById('modalFavBtn');
+
+    function buildDMText(name, size, price) {
+      return `Hi Ultro Posters, I want to order *${name}* (Size: ${size}, Price: ₹${price}). Please confirm availability & payment details.`;
+    }
+
+    previewBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.target.closest('.poster-card');
+        const img = card.querySelector('img').src;
+        const name = card.dataset.name;
+        const theme = card.dataset.theme;
+        const dim = card.dataset.dim;
+        const price = card.dataset.price;
+        const id = btn.dataset.id;
+
+        modalImage.src = img;
+        modalName.textContent = name;
+        modalTheme.innerHTML = '<strong>Theme:</strong> ' + theme;
+        modalDim.innerHTML = '<strong>Size:</strong> ' + dim.replace('x',' × ') + ' cm';
+        modalPrice.textContent = '₹' + price;
+
+        // open instagram profile link
+        openIG.href = `https://instagram.com/${INSTAGRAM_HANDLE}`;
+
+        // store message in button dataset for copy
+        copyOrder.dataset.msg = buildDMText(name, dim.replace('x',' × '), price);
+
+        // update modal favorite button state
+        modalFavBtn.dataset.id = id;
+        modalFavBtn.innerHTML = isFavorited(id) ? '<i class="bi bi-heart-fill"></i> Remove from favorites' : '<i class="bi bi-heart"></i> Add to favorites';
+
+        previewModal.show();
+      });
+    });
+
+    // COPY DM message (so user can easily paste in IG DM)
+    copyOrder.addEventListener('click', () => {
+      const text = copyOrder.dataset.msg || '';
+      navigator.clipboard.writeText(text).then(() => {
+        copyOrder.innerHTML = '<i class="bi bi-check-lg"></i> Copied';
+        setTimeout(() => copyOrder.innerHTML = '<i class="bi bi-clipboard"></i> Copy DM message', 1500);
+      });
+    });
+
+    // FAVORITES (localStorage)
+    function favoritesKey() { return 'ultro_favs_v2'; }
+    function getFavorites() {
+      const raw = localStorage.getItem(favoritesKey());
+      return raw ? JSON.parse(raw) : [];
+    }
+    function saveFavorites(arr) { localStorage.setItem(favoritesKey(), JSON.stringify(arr)); }
+
+    function isFavorited(id) {
+      return getFavorites().includes(String(id));
+    }
+
+    function toggleFavorite(id) {
+      let favs = getFavorites();
+      id = String(id);
+      if (favs.includes(id)) {
+        favs = favs.filter(x => x !== id);
+      } else {
+        favs.push(id);
+      }
+      saveFavorites(favs);
+      updateFavUI();
+    }
+
+    // Buttons on each card
+    document.querySelectorAll('.fav-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = e.currentTarget.dataset.id;
+        toggleFavorite(id);
+      });
+    });
+
+    // modal fav button
+    modalFavBtn.addEventListener('click', (e) => {
+      toggleFavorite(e.currentTarget.dataset.id);
+      // refresh modal state text
+      setTimeout(() => {
+        modalFavBtn.innerHTML = isFavorited(e.currentTarget.dataset.id) ? '<i class="bi bi-heart-fill"></i> Remove from favorites' : '<i class="bi bi-heart"></i> Add to favorites';
+      }, 150);
+    });
+
+    function updateFavUI() {
+      const favs = getFavorites();
+      document.querySelectorAll('.fav-btn').forEach(btn => {
+        const id = btn.dataset.id;
+        btn.classList.toggle('active', favs.includes(String(id)));
+        btn.innerHTML = favs.includes(String(id)) ? '<i class="bi bi-heart-fill"></i>' : '<i class="bi bi-heart"></i>';
+      });
+    }
+
+    updateFavUI(); // init
+
+    // THEME toggle (dark/light)
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+      const icon = themeToggle.querySelector('i');
+      icon.classList.toggle('bi-moon-fill');
+      icon.classList.toggle('bi-sun-fill');
+    });
+
+    // initial apply filters
+    applyFiltersAndSort();
+
+  </script>
+</body>
 </html>
